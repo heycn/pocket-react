@@ -2,6 +2,8 @@
 
 ## 开发
 
+`yarn install`
+
 `yarn start`
 
 ## 测试
