@@ -18,3 +18,13 @@
    1. 使用 dart-sass 代替 node-sass（后者容易被墙
    2.  `yarn add --dev node-sass@npm:dart-sass@1.25.0`
 
+##  React Router
+
+> 文档真 TM 难看
+
+使用 5.3.0 版本，才有 *Switch*
+
+Router模式选择：HashRouter，不需要后台服务器
+
+## 导航栏
+
