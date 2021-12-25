@@ -30,5 +30,9 @@ Router模式选择：HashRouter，不需要后台服务器
 
 使用黑体
 
+## svg
+
+为了不被 TreeShaking，我们用 ***require*** 引入 svg
+
 ## 导航栏
 
