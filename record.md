@@ -1,3 +1,9 @@
+# 使用React开发『叮当记账』
+
+> 这是一篇记录个人项目开发的文章
+
+
+
 ## 最难的技术问题
 
 ### SCSS 支持
@@ -18,38 +24,63 @@
    1. 使用 dart-sass 代替 node-sass（后者容易被墙
    2.  `yarn add --dev node-sass@npm:dart-sass@1.25.0`
 
-##  React Router
 
+
+## 字体
+
+[跨平台中文字体解决方案]: https://github.com/zenozeng/fonts.css/
+
+使用黑体
+
+
+
+## 导航栏
+
+### 1. 确定页面 url
+
+> 使用 React Router
+>
 > 文档真 TM 难看
 
 使用 5.3.0 版本，才有 *Switch*
 
-Router模式选择：HashRouter，不需要后台服务器
+Router 有两种模式：History 和 Hash
 
-## 字体
+我选择：HashRouter，不需要后台服务器
 
-使用黑体
+### 2. Icon 组件
 
-## svg
+#### SVG Symbols
 
-为了不被 TreeShaking，我们用 ***require*** 引入 svg
+##### 难点：自定义webpack config
 
-## 导航栏
+1. `yarn eject` 拿到 `webpack` 配置
 
-### Icon 组件
+2. 根据文档学习配置
 
-1. 之前需要一个一个文件引入，我选择引入一整个目录
+   为了不被 TreeShaking，我们用 ***require*** 引入 svg
 
-```typescript
-let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
-try {
-  importAll(require.context('icons', true, /\.svg$/));
-} catch (error) {
-  console.log(error);
-}
-```
+3. 之前需要一个一个文件引入，我选择引入一整个目录
 
-2. 然后运行
+   运行
 
-`yarn add --dev @types/webpack-env`
+   `yarn add --dev @types/webpack-env`
+
+   ```typescript
+   let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
+   try {
+     importAll(require.context('icons', true, /\.svg$/));
+   } catch (error) {
+     console.log(error);
+   }
+   ```
+
+
+### 3. 封装导航栏
+
+- 将 svg 抽离成 <Icon /> 组件
+- 将导航栏抽里程 <Nav /> 组件
+- 将布局抽离成 <Layout /> 组件
+
+
 
