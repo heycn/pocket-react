@@ -1,6 +1,5 @@
 // 导航栏
 
-import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import Icon from './Icon';
