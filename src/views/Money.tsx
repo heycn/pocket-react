@@ -4,8 +4,17 @@ import styled from 'styled-components';
 const TagsSection = styled.section`
   background: #fff;
   padding: 12px 16px;
+  button {
+    background: none;
+    color: #485bff;
+    padding: 4px 16px;
+    border: 1px solid;
+    border-radius: 16px;
+    font-size: 14px;
+  }
   ol {
     margin: 0 -6px;
+    margin-top: 6px;
     li {
       background: #f4f4f4;
       color: #999;
@@ -15,13 +24,6 @@ const TagsSection = styled.section`
       font-size: 14px;
       margin: 8px;
     }
-  }
-  button {
-    background: none;
-    color: #666;
-    padding: 4px;
-    border-bottom: 1px solid;
-    font-size: 14px;
   }
 `;
 
@@ -44,20 +46,56 @@ const NotesSection = styled.section`
     }
   }
 `;
-const TypesSection = styled.section``;
+const TypesSection = styled.section`
+  ul {
+    display: flex;
+    margin: 0 88px;
+    li {
+      width: 50%;
+      text-align: center;
+      color: #666;
+      font-size: 18px;
+      padding: 16px 0;
+      position: relative;
+      font-weight: 300;
+      &.selected {
+        color: #333;
+        font-weight: 1000;
+        ::after {
+          content: '';
+          display: block;
+          height: 4px;
+          position: absolute;
+          bottom: 8px;
+          border-radius: 4px;
+          background: #485bff;
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+`;
 const NumberPadSection = styled.section``;
 
 function Money() {
   return (
     <Layout>
+      <TypesSection>
+        <ul>
+          <li className='selected'>支出</li>
+          <li>收入</li>
+        </ul>
+      </TypesSection>
+
       <TagsSection>
+        <button>新增标签</button>
         <ol>
           <li>衣</li>
           <li>食</li>
           <li>住</li>
           <li>行</li>
         </ol>
-        <button>新增标签</button>
       </TagsSection>
 
       <NotesSection>
@@ -65,13 +103,6 @@ function Money() {
           <input type='text' placeholder='请输入备注信息...' />
         </label>
       </NotesSection>
-
-      <TypesSection>
-        <ul>
-          <li>支出</li>
-          <li>收入</li>
-        </ul>
-      </TypesSection>
 
       <NumberPadSection>
         <div>
