@@ -19,13 +19,31 @@ const TagsSection = styled.section`
   button {
     background: none;
     color: #666;
-    padding: 2px 4px;
+    padding: 4px;
     border-bottom: 1px solid;
     font-size: 14px;
   }
 `;
 
-const NotesSection = styled.section``;
+const NotesSection = styled.section`
+  padding: 0px 16px;
+  label {
+    input {
+      background: none;
+      display: block;
+      font-size: 16px;
+      width: 100%;
+      height: 48px;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #999;
+      ::placeholder {
+        color: #666;
+        font-weight: 300;
+      }
+    }
+  }
+`;
 const TypesSection = styled.section``;
 const NumberPadSection = styled.section``;
 
@@ -44,8 +62,7 @@ function Money() {
 
       <NotesSection>
         <label>
-          <span>备注</span>
-          <input type='text' />
+          <input type='text' placeholder='请输入备注信息...' />
         </label>
       </NotesSection>
 
