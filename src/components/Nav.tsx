@@ -11,15 +11,16 @@ const NavWrapper = styled.nav`
   ul {
     display: flex;
     .link {
+      font-size: 12px;
       width: 33.3333%;
-      text-align: center;
+      display: flex;
       flex-direction: column;
+      padding: 4px 0;
       justify-content: center;
       align-items: center;
-      padding: 8px 0;
       .icon {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
       }
     }
   }
@@ -31,12 +32,15 @@ const Nav = () => {
       <ul>
         <Link to='/tags' className='link'>
           <Icon name='tags' />
+          标签
         </Link>
         <Link to='/money' className='link'>
           <Icon name='money' />
+          记账
         </Link>
         <Link to='/statistics' className='link'>
           <Icon name='chart' />
+          统计
         </Link>
       </ul>
     </NavWrapper>

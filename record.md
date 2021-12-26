@@ -36,3 +36,20 @@ Router模式选择：HashRouter，不需要后台服务器
 
 ## 导航栏
 
+### Icon 组件
+
+1. 之前需要一个一个文件引入，我选择引入一整个目录
+
+```typescript
+let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
+try {
+  importAll(require.context('icons', true, /\.svg$/));
+} catch (error) {
+  console.log(error);
+}
+```
+
+2. 然后运行
+
+`yarn add --dev @types/webpack-env`
+
