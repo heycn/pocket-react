@@ -1,5 +1,37 @@
 import Layout from '../components/Layout';
 import styled from 'styled-components';
+import Icon from 'components/Icon';
+
+const TypesSection = styled.section`
+  ul {
+    display: flex;
+    margin: 0 88px;
+    li {
+      width: 50%;
+      text-align: center;
+      color: #666;
+      font-size: 18px;
+      padding: 16px 0;
+      position: relative;
+      font-weight: 300;
+      &.selected {
+        color: #333;
+        font-weight: 1000;
+        ::after {
+          content: '';
+          display: block;
+          height: 4px;
+          position: absolute;
+          bottom: 8px;
+          border-radius: 4px;
+          background: #485bff;
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+`;
 
 const TagsSection = styled.section`
   background: #fff;
@@ -38,7 +70,7 @@ const NotesSection = styled.section`
       height: 48px;
       border: none;
       border-radius: 0;
-      border-bottom: 1px solid #999;
+      border-bottom: 1px solid #ddd;
       ::placeholder {
         color: #666;
         font-weight: 300;
@@ -46,37 +78,70 @@ const NotesSection = styled.section`
     }
   }
 `;
-const TypesSection = styled.section`
-  ul {
-    display: flex;
-    margin: 0 88px;
-    li {
-      width: 50%;
-      text-align: center;
-      color: #666;
+
+const NumberPadSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  .output {
+    background: white;
+    font-size: 36px;
+    line-height: 64px;
+    text-align: right;
+    padding: 0 16px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.15);
+  }
+  .pad {
+    button {
+      background: #ededed;
+      float: left;
+      color: #333;
+      width: 25%;
+      height: 56px;
       font-size: 18px;
-      padding: 16px 0;
-      position: relative;
-      font-weight: 300;
-      &.selected {
-        color: #333;
-        font-weight: 1000;
-        ::after {
-          content: '';
-          display: block;
-          height: 4px;
-          position: absolute;
-          bottom: 8px;
-          border-radius: 4px;
-          background: #485bff;
-          width: 100%;
-          left: 0;
-        }
+      .icon {
+        width: 1.8em;
+        height: 1.8em;
+        fill: #333;
+      }
+      &.ok {
+        height: 112px;
+        float: right;
+      }
+      &.zero {
+        width: 50%;
+      }
+      &:nth-child(1) {
+        background: #fff;
+      }
+      &:nth-child(2),
+      &:nth-child(5) {
+        background: #f8f8f8;
+      }
+      &:nth-child(3),
+      &:nth-child(6),
+      &:nth-child(9) {
+        background: #eee;
+      }
+      &:nth-child(4),
+      &:nth-child(7),
+      &:nth-child(10) {
+        background: #e8e8e8;
+      }
+      &:nth-child(8),
+      &:nth-child(11),
+      &:nth-child(13) {
+        background: #ddd;
+      }
+      &:nth-child(14) {
+        background: #d8d8d8;
+      }
+      &:nth-child(12) {
+        background: #ccc;
+        color: #485bff;
       }
     }
   }
 `;
-const NumberPadSection = styled.section``;
 
 function Money() {
   return (
@@ -105,15 +170,14 @@ function Money() {
       </NotesSection>
 
       <NumberPadSection>
-        <div>
-          <span>金额</span>
-          100
-        </div>
-        <div>
+        <div className='output'>100</div>
+        <div className='pad clearfix'>
           <button>1</button>
           <button>2</button>
           <button>3</button>
-          <button>删除</button>
+          <button>
+            <Icon name='delete' />
+          </button>
           <button>4</button>
           <button>5</button>
           <button>6</button>
@@ -121,8 +185,8 @@ function Money() {
           <button>7</button>
           <button>8</button>
           <button>9</button>
-          <button>保存</button>
-          <button>0</button>
+          <button className='ok'>保存</button>
+          <button className='zero'>0</button>
           <button>.</button>
         </div>
       </NumberPadSection>

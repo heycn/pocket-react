@@ -50,3 +50,9 @@ button {
   height: 1em;
   display: inline-block;
 }
+
+.clearfix {
+  content: '';
+  display: block;
+  clear: both;
+}
