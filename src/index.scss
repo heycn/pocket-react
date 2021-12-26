@@ -29,9 +29,16 @@ a {
 }
 
 body {
+  background: #ededed;
   font-family: $font-hei;
   font-size: 16px;
+  color: #333;
   line-height: 1.2;
+}
+
+button {
+  font-family: inherit;
+  border: none;
 }
 
 .icon {
