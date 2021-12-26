@@ -1,6 +1,6 @@
 // 导航栏
 
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 import Icon from './Icon';
 
@@ -18,9 +18,18 @@ const NavWrapper = styled.nav`
         align-items: center;
         font-size: 12px;
         padding: 4px 0;
+        color: #333;
+
         .icon {
           width: 28px;
           height: 28px;
+          fill: #333;
+        }
+        &.selected {
+          color: #485bff;
+          .icon {
+            fill: #485bff;
+          }
         }
       }
     }
@@ -32,22 +41,22 @@ const Nav = () => {
     <NavWrapper>
       <ul>
         <li>
-          <Link to='/tags'>
+          <NavLink to='/tags' activeClassName='selected'>
             <Icon name='tags' />
             标签
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to='/money'>
+          <NavLink to='/money' activeClassName='selected'>
             <Icon name='money' />
             记账
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to='/statistics'>
+          <NavLink to='/statistics' activeClassName='selected'>
             <Icon name='chart' />
             统计
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </NavWrapper>
