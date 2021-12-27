@@ -32,7 +32,9 @@
 
 使用黑体
 
+## 模块化组件
 
+开发时，采用模块化开发，每个文件不超过150行代码
 
 ## 导航栏
 
@@ -81,6 +83,8 @@ Router 有两种模式：History 和 Hash
 - 将 svg 抽离成 <Icon /> 组件
 - 将导航栏抽里程 <Nav /> 组件
 - 将布局抽离成 <Layout /> 组件
+
+### 4. 将 Styled Component 改造为 Function Component
 
 
 
