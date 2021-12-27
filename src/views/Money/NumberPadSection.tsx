@@ -84,7 +84,6 @@ const NumberPadSection = styled.section`
       &:nth-child(13) {
         font-size: 24px;
         font-weight: 150;
-        color: #666;
       }
     }
   }

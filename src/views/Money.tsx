@@ -50,7 +50,7 @@ function Money() {
           <button>9</button>
           <button className='ok'>保存</button>
           <button className='zero'>0</button>
-          <button>.</button>
+          <button>·</button>
         </div>
       </NumberPadSection>
     </MyLayout>
