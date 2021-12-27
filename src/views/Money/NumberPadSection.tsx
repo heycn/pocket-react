@@ -94,7 +94,17 @@ const Wrapper = styled.section`
 `;
 
 const NumberPadSection: React.FC = () => {
-  const [output, setOutput] = React.useState('0');
+  const [output, _setOutput] = React.useState('0');
+
+  const setOutput = (output: string) => {
+    if (output.length > 12) {
+      output = output.slice(0, 12);
+    } else if (output.length === 0) {
+      output = '0';
+    }
+    _setOutput(output);
+  };
+
   const onClickButtonWrapper = (e: React.MouseEvent) => {
     const text = (e.target as HTMLButtonElement).textContent;
     if (text === null) {
@@ -117,14 +127,21 @@ const NumberPadSection: React.FC = () => {
           setOutput(output + text);
         }
         break;
-      case '.':
-        console.log('点');
+      case '·':
+        if (output.indexOf('.') >= 0) {
+          return;
+        }
+        setOutput(output + '.');
         break;
       case '删除':
-        console.log('删除');
+        if (output.length === 1) {
+          setOutput('');
+        } else {
+          setOutput(output.slice(0, -1));
+        }
         break;
       case '清零':
-        console.log('清零');
+        setOutput('');
         break;
       case '保存':
         console.log('保存');
@@ -155,7 +172,7 @@ const NumberPadSection: React.FC = () => {
         <button>9</button>
         <button className='ok'>保存</button>
         <button className='zero'>0</button>
-        <button>.</button>
+        <button>·</button>
       </div>
     </Wrapper>
   );
