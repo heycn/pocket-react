@@ -4,7 +4,7 @@ const NumberPadSection = styled.section`
   display: flex;
   flex-direction: column;
   .outputNode {
-    background: white;
+    background: none;
     position: relative;
     .outputName {
       position: absolute;
@@ -20,7 +20,8 @@ const NumberPadSection = styled.section`
       line-height: 64px;
       text-align: right;
       padding: 0 12px;
-      box-shadow: inset 0 -4px 4px -4px rgba(0, 0, 0, 0.15);
+      border-top: 1px solid rgba(85, 85, 85, 0.15);
+      box-shadow: inset 0 -4px 4px -4px rgba(0, 0, 0, 0.1);
     }
   }
   .pad {
@@ -30,7 +31,7 @@ const NumberPadSection = styled.section`
       color: #333;
       width: 25%;
       height: 56px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 1000;
       .icon {
         width: 1.8em;
@@ -84,7 +85,7 @@ const NumberPadSection = styled.section`
       &:nth-child(11),
       &:nth-child(13) {
         font-size: 24px;
-        font-weight: 150;
+        font-weight: 300;
       }
     }
   }
