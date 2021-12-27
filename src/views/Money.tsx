@@ -14,12 +14,7 @@ const MyLayout = styled(Layout)`
 function Money() {
   return (
     <MyLayout>
-      <TypesSection>
-        <ul>
-          <li className='selected'>支出</li>
-          <li>收入</li>
-        </ul>
-      </TypesSection>
+      <TypesSection />
 
       <TagsSection />
 

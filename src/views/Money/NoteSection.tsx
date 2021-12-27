@@ -8,8 +8,7 @@ const Wrapper = styled.section`
       background: none;
       display: block;
       font-size: 18px;
-      font-weight: 300;
-      color: #333;
+      color: black;
       width: 100%;
       height: 48px;
       border: none;
@@ -17,7 +16,6 @@ const Wrapper = styled.section`
       ::placeholder {
         color: #666;
         font-weight: 300;
-        font-size: 16px;
       }
     }
   }
@@ -28,7 +26,7 @@ const NoteSection: React.FC = () => {
   return (
     <Wrapper>
       <label>
-        <input type='text' placeholder='请输入备注信息...' value={note} onChange={(e) => setNote(e.target.value)} />
+        <input type='text' placeholder='输入备注信息...' value={note} onChange={(e) => setNote(e.target.value)} />
       </label>
     </Wrapper>
   );
