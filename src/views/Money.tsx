@@ -70,7 +70,6 @@ const NotesSection = styled.section`
       height: 48px;
       border: none;
       border-radius: 0;
-      border-bottom: 1px solid #ddd;
       ::placeholder {
         color: #666;
         font-weight: 300;
@@ -82,13 +81,24 @@ const NotesSection = styled.section`
 const NumberPadSection = styled.section`
   display: flex;
   flex-direction: column;
-  .output {
+  .outputNode {
     background: white;
-    font-size: 36px;
-    line-height: 64px;
-    text-align: right;
-    padding: 0 16px;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    .outputName {
+      position: absolute;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 1000;
+      line-height: 64px;
+      padding-left: 12px;
+    }
+    .output {
+      font-size: 36px;
+      line-height: 64px;
+      text-align: right;
+      padding: 0 12px;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.15);
+    }
   }
   .pad {
     button {
@@ -98,6 +108,7 @@ const NumberPadSection = styled.section`
       width: 25%;
       height: 56px;
       font-size: 18px;
+      font-weight: 1000;
       .icon {
         width: 1.8em;
         height: 1.8em;
@@ -139,6 +150,20 @@ const NumberPadSection = styled.section`
         background: #ccc;
         color: #485bff;
       }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(9),
+      &:nth-child(10),
+      &:nth-child(11),
+      &:nth-child(13) {
+        font-size: 24px;
+        font-weight: 150;
+        color: #666;
+      }
     }
   }
 `;
@@ -170,7 +195,10 @@ function Money() {
       </NotesSection>
 
       <NumberPadSection>
-        <div className='output'>100</div>
+        <div className='outputNode'>
+          <div className='outputName'>金额</div>
+          <div className='output'>100</div>
+        </div>
         <div className='pad clearfix'>
           <button>1</button>
           <button>2</button>
