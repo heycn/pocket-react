@@ -9,10 +9,11 @@ const NumberPadSection = styled.section`
     .outputName {
       position: absolute;
       text-align: center;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 1000;
       line-height: 64px;
       padding-left: 12px;
+      color: #666;
     }
     .output {
       font-size: 36px;
@@ -70,7 +71,7 @@ const NumberPadSection = styled.section`
       }
       &:nth-child(12) {
         background: #ccc;
-        color: #485bff;
+        color: #06f;
       }
       &:nth-child(1),
       &:nth-child(2),

@@ -22,7 +22,7 @@ const TypesSection = styled.section`
           position: absolute;
           bottom: 8px;
           border-radius: 4px;
-          background: #485bff;
+          background: #06f;
           width: 100%;
           left: 0;
         }
