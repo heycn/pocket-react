@@ -12,7 +12,7 @@ const NotesSection = styled.section`
       border: none;
       border-radius: 0;
       ::placeholder {
-        color: #666;
+        color: #333;
         font-weight: 300;
       }
     }
