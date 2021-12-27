@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import styled from 'styled-components';
 import Icon from 'components/Icon';
 import {TagsSection} from './Money/TagsSection';
-import {NotesSection} from './Money/NotesSection';
+import {NoteSection} from './Money/NoteSection';
 import {TypesSection} from './Money/TypesSection';
 import {NumberPadSection} from './Money/NumberPadSection';
 
@@ -21,13 +21,9 @@ function Money() {
         </ul>
       </TypesSection>
 
-      <TagsSection></TagsSection>
+      <TagsSection />
 
-      <NotesSection>
-        <label>
-          <input type='text' placeholder='请输入备注信息...' />
-        </label>
-      </NotesSection>
+      <NoteSection />
 
       <NumberPadSection>
         <div className='outputNode'>
