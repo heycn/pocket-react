@@ -20,7 +20,7 @@ const NumberPadSection = styled.section`
       line-height: 64px;
       text-align: right;
       padding: 0 12px;
-      border-top: .5px solid black;
+      border-top: .5px solid rgba(0, 0, 0, .15);
       box-shadow: inset 0 -4px 4px -4px rgba(0, 0, 0, 0.1);
     }
   }
