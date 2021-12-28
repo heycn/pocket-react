@@ -21,12 +21,18 @@ const Wrapper = styled.section`
   }
 `;
 
-const NoteSection: React.FC = () => {
-  const [note, setNote] = React.useState('');
+// 声明类型
+type Props = {
+  value: string;
+  onChange: (value: string) => void;
+};
+
+const NoteSection: React.FC<Props> = (props) => {
+  const note = props.value;
   return (
     <Wrapper>
       <label>
-        <input type='text' placeholder='输入备注信息...' value={note} onChange={(e) => setNote(e.target.value)} />
+        <input type='text' placeholder='输入备注信息...' value={note} onChange={(e) => props.onChange(e.target.value)} />
       </label>
     </Wrapper>
   );

@@ -32,28 +32,30 @@ const Wrapper = styled.section`
   }
 `;
 
-const TypesSection: React.FC = () => {
-  const [type, setType] = React.useState('-'); // + 收入，- 支出
+// 声明类型
+type Props = {
+  value: '-' | '+';
+  onChange: (value: '-' | '+') => void;
+};
 
+const TypesSection: React.FC<Props> = (props) => {
+  const typeMap = {'-': '支出', '+': '收入'};
+  const [typeList] = React.useState<('-' | '+')[]>(['-', '+']);
+  const type = props.value;
   return (
     <Wrapper>
       <ul>
-        <li
-          className={type === '-' ? 'selected' : ''}
-          onClick={() => {
-            setType('-');
-          }}
-        >
-          支出
-        </li>
-        <li
-          className={type === '+' ? 'selected' : ''}
-          onClick={() => {
-            setType('+');
-          }}
-        >
-          收入
-        </li>
+        {typeList.map((c) => (
+          <li
+            key={c}
+            className={type === c ? 'selected' : ''}
+            onClick={() => {
+              props.onChange(c);
+            }}
+          >
+            {typeMap[c]}
+          </li>
+        ))}
       </ul>
     </Wrapper>
   );

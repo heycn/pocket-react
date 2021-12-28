@@ -3,16 +3,26 @@ import Icon from 'components/Icon';
 import {Wrapper} from './NumberPadSection/Wrapper';
 import {generateOutput} from './NumberPadSection/generateOutput';
 
-const NumberPadSection: React.FC = () => {
-  const [output, _setOutput] = React.useState('0');
+// 声明类型
+type Props = {
+  value: number;
+  onChange: (value: number) => void;
+  onSave?: () => void;
+};
+
+const NumberPadSection: React.FC<Props> = (props) => {
+  const output = props.value.toString();
 
   const setOutput = (output: string) => {
+    let value;
     if (output.length > 12) {
-      output = output.slice(0, 12);
+      value = parseFloat(output.slice(0, 12));
     } else if (output.length === 0) {
-      output = '0';
+      value = 0;
+    } else {
+      value = parseFloat(output);
     }
-    _setOutput(output);
+    props.onChange(value);
   };
 
   const onClickButtonWrapper = (e: React.MouseEvent) => {
@@ -21,10 +31,12 @@ const NumberPadSection: React.FC = () => {
       return;
     }
     if (text === '保存') {
-      // TODO
+      if (props.onSave) {
+        props.onSave();
+      }
       return;
     }
-    if ('0123456789.'.split('').concat(['', '清零']).indexOf(text) >= 0) {
+    if ('0123456789'.split('').concat(['', '·', '清零']).indexOf(text) >= 0) {
       setOutput(generateOutput(text, output));
     }
   };

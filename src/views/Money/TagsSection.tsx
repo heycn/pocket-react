@@ -23,11 +23,13 @@ const Wrapper = styled.section`
       display: inline-block;
       padding: 4px 16px;
       font-size: 14px;
+      font-weight: 300;
       margin: 8px;
       &.selected {
         position: relative;
         background: rgba(0, 102, 255, 0.15);
         color: #06f;
+        font-weight: 400;
         ::after {
           content: '';
           width: 100%;
@@ -43,9 +45,15 @@ const Wrapper = styled.section`
   }
 `;
 
-const TagsSection: React.FC = (props) => {
+// 声明类型
+type Props = {
+  value: string[];
+  onChange: (selected: string[]) => void;
+};
+
+const TagsSection: React.FC<Props> = (props) => {
   const [tags, setTags] = React.useState<string[]>(['衣', '食', '住', '行']);
-  const [selectedTags, setSelectedTags] = React.useState<string[]>([]);
+  const selectedTags = props.value;
 
   const onAddTag = () => {
     const tagName = window.prompt('请输入标签名');
@@ -57,9 +65,9 @@ const TagsSection: React.FC = (props) => {
     const index = selectedTags.indexOf(tag);
     if (index >= 0) {
       // 如果 tag 已经被选中，就复制所有没有被选中的 tag，作为新的 selectedTags
-      setSelectedTags(selectedTags.filter((t) => t !== tag));
+      props.onChange(selectedTags.filter((t) => t !== tag));
     } else {
-      setSelectedTags([...selectedTags, tag]);
+      props.onChange([...selectedTags, tag]);
     }
   };
 
