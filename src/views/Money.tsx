@@ -23,48 +23,19 @@ function Money() {
     amount: 0
   });
 
+  const onChange = (obj: Partial<typeof selected>) => {
+    setSelected({...selected, ...obj});
+  };
+
   return (
     <MyLayout>
-      <TypesSection
-        value={selected.type}
-        onChange={(type) => {
-          setSelected({
-            ...selected,
-            type: type
-          });
-        }}
-      />
+      <TypesSection value={selected.type} onChange={(type) => onChange({type})} />
 
-      <TagsSection
-        value={selected.tags}
-        onChange={(tags) =>
-          setSelected({
-            ...selected,
-            tags: tags
-          })
-        }
-      />
+      <TagsSection value={selected.tags} onChange={(tags) => onChange({tags})} />
 
-      <NoteSection
-        value={selected.note}
-        onChange={(note) => {
-          setSelected({
-            ...selected,
-            note: note
-          });
-        }}
-      />
+      <NoteSection value={selected.note} onChange={(note) => onChange({note})} />
 
-      <NumberPadSection
-        value={selected.amount}
-        onChange={(amount) => {
-          setSelected({
-            ...selected,
-            amount: amount
-          });
-        }}
-        onSave={() => {}}
-      />
+      <NumberPadSection value={selected.amount} onChange={(amount) => onChange({amount})} onSave={() => {}} />
     </MyLayout>
   );
 }
