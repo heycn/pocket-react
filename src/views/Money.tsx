@@ -19,7 +19,7 @@ function Money() {
   const [selected, setSelected] = React.useState({
     tags: [] as string[],
     note: '',
-    type: '' as Type,
+    type: '-' as Type,
     amount: 0
   });
 
