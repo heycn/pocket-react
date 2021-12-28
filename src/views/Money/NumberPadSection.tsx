@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-// import Icon from 'components/Icon';
+import Icon from 'components/Icon';
 
 const Wrapper = styled.section`
   display: flex;
@@ -35,11 +35,11 @@ const Wrapper = styled.section`
       height: 56px;
       font-size: 16px;
       font-weight: 1000;
-      /* .icon {
+      .icon {
         width: 1.8em;
         height: 1.8em;
         fill: #333;
-      } */
+      }
       &.ok {
         height: 112px;
         float: right;
@@ -133,7 +133,7 @@ const NumberPadSection: React.FC = () => {
         }
         setOutput(output + '.');
         break;
-      case '删除':
+      case '':
         if (output.length === 1) {
           setOutput('');
         } else {
@@ -160,8 +160,8 @@ const NumberPadSection: React.FC = () => {
         <button>2</button>
         <button>3</button>
         <button>
-          删除
-          {/* <Icon name='delete' /> */}
+          {/* 删除 */}
+          <Icon name='delete' />
         </button>
         <button>4</button>
         <button>5</button>
