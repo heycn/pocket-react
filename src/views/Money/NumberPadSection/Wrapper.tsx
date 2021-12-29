@@ -21,12 +21,11 @@ const Wrapper = styled.section`
       text-align: right;
       padding: 0 12px;
       border-top: 0.5px solid rgba(0, 0, 0, 0.15);
-      box-shadow: inset 0 -4px 4px -4px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 -4px 4px -4px rgba(0, 0, 0, 0.05);
     }
   }
   .pad {
     button {
-      background: #ededed;
       float: left;
       color: #333;
       width: 25%;
@@ -45,35 +44,32 @@ const Wrapper = styled.section`
       &.zero {
         width: 50%;
       }
-      &:nth-child(1) {
-        background: #fff;
-      }
-      &:nth-child(2),
-      &:nth-child(5) {
-        background: #f8f8f8;
-      }
-      &:nth-child(3),
-      &:nth-child(6),
-      &:nth-child(9) {
-        background: #eee;
-      }
-      &:nth-child(4),
-      &:nth-child(7),
-      &:nth-child(10) {
-        background: #e8e8e8;
-      }
-      &:nth-child(8),
-      &:nth-child(11),
-      &:nth-child(13) {
-        background: #ddd;
-      }
-      &:nth-child(14) {
-        background: #d8d8d8;
-      }
       &:nth-child(12) {
-        background: #ccc;
         color: #06f;
       }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10),
+      &:nth-child(11) {
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(9),
+      &:nth-child(10),
+      &:nth-child(13) {
+        border-right: 0.5px solid rgba(0, 0, 0, 0.15);
+      }
+
       &:nth-child(1),
       &:nth-child(2),
       &:nth-child(3),
@@ -83,7 +79,9 @@ const Wrapper = styled.section`
       &:nth-child(9),
       &:nth-child(10),
       &:nth-child(11),
-      &:nth-child(13) {
+      &:nth-child(13),
+      &:nth-child(14) {
+        background: #f8f8f8;
         font-size: 24px;
         font-weight: 300;
       }
