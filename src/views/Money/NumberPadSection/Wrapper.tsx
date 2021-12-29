@@ -1,3 +1,5 @@
+// CSS 样式
+
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
@@ -16,8 +18,9 @@ const Wrapper = styled.section`
       color: #666;
     }
     .output {
-      font-size: 36px;
+      font-size: 40px;
       line-height: 64px;
+      font-weight: 200;
       text-align: right;
       padding: 0 12px;
       border-top: 0.5px solid rgba(0, 0, 0, 0.15);
@@ -83,7 +86,7 @@ const Wrapper = styled.section`
       &:nth-child(14) {
         background: #f8f8f8;
         font-size: 24px;
-        font-weight: 150;
+        font-weight: 300;
       }
     }
   }
