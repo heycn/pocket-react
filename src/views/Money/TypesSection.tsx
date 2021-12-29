@@ -16,7 +16,7 @@ const Wrapper = styled.section`
       margin: 0 24px;
       &.selected {
         color: #06f;
-        font-weight: 1000;
+        font-weight: normal;
         ::after {
           content: '';
           display: block;

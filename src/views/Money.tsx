@@ -17,7 +17,7 @@ type Type = '-' | '+';
 function Money() {
   // 被选中的对象
   const [selected, setSelected] = React.useState({
-    tags: [] as string[],
+    tagsIds: [] as number[],
     note: '',
     type: '-' as Type,
     amount: 0
@@ -31,7 +31,7 @@ function Money() {
     <MyLayout>
       <TypesSection value={selected.type} onChange={(type) => onChange({type})} />
 
-      <TagsSection value={selected.tags} onChange={(tags) => onChange({tags})} />
+      <TagsSection value={selected.tagsIds} onChange={(tagsIds) => onChange({tagsIds})} />
 
       <NoteSection value={selected.note} onChange={(note) => onChange({note})} />
 
