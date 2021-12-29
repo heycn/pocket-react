@@ -83,7 +83,7 @@ const Wrapper = styled.section`
       &:nth-child(14) {
         background: #f8f8f8;
         font-size: 24px;
-        font-weight: 300;
+        font-weight: 150;
       }
     }
   }
