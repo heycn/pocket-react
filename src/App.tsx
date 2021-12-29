@@ -3,18 +3,24 @@ import Tags from 'views/Tags';
 import Money from 'views/Money';
 import Statistics from 'views/Statistics';
 import NoMatch from 'views/NoMatch';
+import {Tag} from './views/Tag';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/tags'>
+        {/* exact 精准匹配 */}
+        <Route exact path='/tags'>
+          {' '}
           <Tags />
         </Route>
-        <Route path='/money'>
+        <Route exact path='/tags/:tag'>
+          <Tag />
+        </Route>
+        <Route exact path='/money'>
           <Money />
         </Route>
-        <Route path='/statistics'>
+        <Route exact path='/statistics'>
           <Statistics />
         </Route>
         <Redirect exact from='/' to='/money' />
