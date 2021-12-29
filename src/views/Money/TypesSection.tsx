@@ -4,6 +4,7 @@ import React from 'react';
 const Wrapper = styled.section`
   ul {
     display: flex;
+    padding: 0 40px;
     li {
       width: 50%;
       text-align: center;
@@ -12,8 +13,7 @@ const Wrapper = styled.section`
       padding: 16px 0;
       position: relative;
       font-weight: 300;
-      /* border: 2px solid red; */
-      margin: 0 40px;
+      margin: 0 24px;
       &.selected {
         color: #06f;
         font-weight: 1000;
