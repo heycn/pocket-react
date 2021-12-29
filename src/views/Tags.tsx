@@ -3,6 +3,7 @@ import {useTags} from 'useTags';
 import Icon from 'components/Icon';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {Button} from 'components/Button';
 
 const Title = styled.div`
   text-align: center;
@@ -37,14 +38,7 @@ const Center = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-const Button = styled.button`
-  background: #06f;
-  color: #fff;
-  font-size: 18px;
-  font-weight: normal;
-  padding: 8px 56px;
-  border-radius: 64px;
-`;
+
 const Space = styled.div`
   height: 32px;
 `;
