@@ -1,5 +1,8 @@
 // 导航栏图标组件
 
+import React from 'react';
+import cs from 'classnames';
+
 // 引入一个目录
 let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
 try {
@@ -8,11 +11,17 @@ try {
   console.log(error);
 }
 
-const Icon = (props: {name?: string}) => {
+type Props = {
+  name?: string;
+} & React.SVGAttributes<SVGAElement>;
+
+const Icon = (props: Props) => {
+  const {name, children, className, ...rest} = props;
   return (
-  <svg className='icon'>
-    {props.name && <use xlinkHref={'#' + props.name} />} 
-  </svg>)
+    <svg className={cs('icon', className)} {...rest}>
+      {props.name && <use xlinkHref={'#' + props.name} />}
+    </svg>
+  );
 };
 
 export default Icon;
