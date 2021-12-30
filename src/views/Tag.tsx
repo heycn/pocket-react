@@ -6,10 +6,15 @@ import Icon from 'components/Icon';
 import styled from 'styled-components';
 import {Button} from 'components/Button';
 
-const Title = styled.div`
+const Topbar = styled.header`
+  display: flex;
+  justify-content: space-between;
   text-align: center;
-  padding: 14px 0;
+  padding: 14px 18px;
   font-size: 20px;
+  .icon {
+    fill: #333;
+  }
 `;
 
 type Params = {
@@ -21,10 +26,11 @@ const Tag: React.FC = () => {
   const tag = findTag(parseInt(id));
   return (
     <Layout>
-      <Title>
+      <Topbar>
         <Icon name='left' />
         <span>编辑标签</span>
-      </Title>
+        <Icon />
+      </Topbar>
       <div>
         <label>
           <span>标签名</span>

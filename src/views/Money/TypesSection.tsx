@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const Wrapper = styled.section`
+const Wrapper = styled.header`
   ul {
     display: flex;
     padding: 0 40px;

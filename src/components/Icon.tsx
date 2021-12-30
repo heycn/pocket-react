@@ -8,12 +8,11 @@ try {
   console.log(error);
 }
 
-const Icon = (props: {name: string}) => {
+const Icon = (props: {name?: string}) => {
   return (
-    <svg className='icon'>
-      <use xlinkHref={'#' + props.name} />
-    </svg>
-  );
+  <svg className='icon'>
+    {props.name && <use xlinkHref={'#' + props.name} />} 
+  </svg>)
 };
 
 export default Icon;
