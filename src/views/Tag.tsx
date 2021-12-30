@@ -28,6 +28,7 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     background: #fff;
+    margin-top: 16px;
     span {
       margin-right: 12px;
       white-space: nowrap;
@@ -54,21 +55,22 @@ const Wrapper = styled.section`
   }
 `;
 
+const Deleted = styled.div`
+  text-align: center;
+  font-size: 24px;
+  color: #666;
+  font-weight: 300;
+`;
+
 type Params = {
   id: string;
 };
 const Tag: React.FC = () => {
-  const {findTag, updateTag} = useTags();
+  const {findTag, updateTag, deleteTag} = useTags();
   let {id: idString} = useParams<Params>();
   const tag = findTag(parseInt(idString));
-  return (
-    <Layout>
-      <Topbar>
-        <Icon name='left' />
-        <span>编辑标签</span>
-        <Icon />
-      </Topbar>
-      <Space />
+  const tagContent = (tag: {id: number; name: string}) => (
+    <div>
       <Wrapper>
         <label>
           <span>标签名：</span>
@@ -86,8 +88,20 @@ const Tag: React.FC = () => {
       <Space />
       <Space />
       <Center>
-        <Button>删除标签</Button>
+        <Button onClick={() => deleteTag(tag.id)}>删除标签</Button>
       </Center>
+    </div>
+  );
+
+  return (
+    <Layout>
+      <Topbar>
+        <Icon name='left' />
+        <span>编辑标签</span>
+        <Icon />
+      </Topbar>
+
+      {tag ? tagContent(tag) : <Deleted><Space /><Space />标签已被删除</Deleted>}
     </Layout>
   );
 };
