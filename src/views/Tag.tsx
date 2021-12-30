@@ -29,17 +29,19 @@ const Wrapper = styled.section`
     align-items: center;
     background: #fff;
     margin-top: 16px;
+
     span {
       margin-right: 12px;
       white-space: nowrap;
       font-size: 18px;
       color: #333;
+      font-weight: 400;
     }
     input {
       width: 100%;
       background: none;
       font-size: 18px;
-      /* color: #666; */
+      color: #333;
       height: 48px;
       border: none;
       border-radius: 0;
