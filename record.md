@@ -36,9 +36,7 @@
 
 开发时，采用模块化开发，每个文件不超过150行代码
 
-## 导航栏
-
-### 1. 确定页面 url
+## 确定页面 url
 
 > 使用 React Router
 >
@@ -50,11 +48,11 @@ Router 有两种模式：History 和 Hash
 
 我选择：HashRouter，不需要后台服务器
 
-### 2. Icon 组件
+## Icon 组件
 
-#### SVG Symbols
+### SVG Symbols
 
-##### 难点：自定义webpack config
+#### 难点：自定义webpack config
 
 1. `yarn eject` 拿到 `webpack` 配置
 
@@ -77,14 +75,5 @@ Router 有两种模式：History 和 Hash
    }
    ```
 
-
-### 3. 封装导航栏
-
-- 将 svg 抽离成 <Icon /> 组件
-- 将导航栏抽里程 <Nav /> 组件
-- 将布局抽离成 <Layout /> 组件
-
-### 4. 将 Styled Component 改造为 Function Component
-
-
+## 将 Styled Component 改造为 Function Component
 
