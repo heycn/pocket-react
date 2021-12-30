@@ -1,7 +1,8 @@
 // 封装一个自定义 Hook
 
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {createId} from 'lib/createId';
+import {useUpdate} from 'hooks/useUpdate';
 
 const defaultTags = [
   {id: createId(), name: '衣'},
@@ -11,7 +12,13 @@ const defaultTags = [
 ];
 
 const useTags = () => {
-  const [tags, setTags] = React.useState<{id: number; name: string}[]>(defaultTags);
+  const [tags, setTags] = React.useState<{id: number; name: string}[]>([]);
+  useEffect(() => {
+    setTags(JSON.parse(window.localStorage.getItem('tags') || '[]'));
+  }, []);
+  useUpdate(() => {
+    window.localStorage.setItem('tags', JSON.stringify(tags));
+  }, [tags]);
   const findTag = (id: number) => tags.filter((tag) => tag.id === id)[0];
   const findTagIndex = (id: number) => {
     let result = -1;
@@ -29,7 +36,13 @@ const useTags = () => {
   const deleteTag = (id: number) => {
     setTags(tags.filter((tag) => tag.id !== id));
   };
-  return {tags, setTags, findTag, updateTag, findTagIndex, deleteTag};
+  const addTag = () => {
+    const tagName = window.prompt('请输入标签名');
+    if (tagName !== null) {
+      setTags([...tags, {id: createId(), name: tagName}]);
+    }
+  };
+  return {tags, addTag, setTags, findTag, updateTag, findTagIndex, deleteTag};
 };
 
 export {useTags};
