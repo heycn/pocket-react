@@ -23,7 +23,7 @@ const Wrapper = styled.section`
       font-weight: 200;
       text-align: right;
       padding: 0 12px;
-      border-top: 0.5px solid rgba(0, 0, 0, 0.15);
+      border-top: .5px solid rgba(0, 0, 0, 0.15);
       box-shadow: inset 0 -4px 4px -4px rgba(0, 0, 0, 0.05);
     }
   }
