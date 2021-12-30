@@ -29,7 +29,7 @@ const Wrapper = styled.section`
     align-items: center;
     background: #fff;
     span {
-      margin-right: 24px;
+      margin-right: 12px;
       white-space: nowrap;
       font-size: 18px;
       color: #333;
@@ -38,15 +38,19 @@ const Wrapper = styled.section`
       width: 100%;
       background: none;
       font-size: 18px;
-      color: #666;
+      /* color: #666; */
       height: 48px;
       border: none;
       border-radius: 0;
-      ::placeholder {
-        color: #666;
-        font-weight: 300;
-      }
+      font-weight: 300;
     }
+  }
+  .tips {
+    padding-top: 8px;
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+    font-weight: 300;
   }
 `;
 
@@ -54,9 +58,9 @@ type Params = {
   id: string;
 };
 const Tag: React.FC = () => {
-  const {findTag} = useTags();
-  const {id} = useParams<Params>();
-  const tag = findTag(parseInt(id));
+  const {findTag, updateTag} = useTags();
+  let {id: idString} = useParams<Params>();
+  const tag = findTag(parseInt(idString));
   return (
     <Layout>
       <Topbar>
@@ -68,8 +72,15 @@ const Tag: React.FC = () => {
       <Wrapper>
         <label>
           <span>标签名：</span>
-          <input type='text' placeholder='修改标签名' value={tag.name} />
+          <input
+            type='text'
+            value={tag.name}
+            onChange={(e) => {
+              updateTag(tag.id, {name: e.target.value});
+            }}
+          />
         </label>
+        <div className='tips'>点击修改标签名</div>
       </Wrapper>
       <Space />
       <Space />
