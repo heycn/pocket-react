@@ -2,7 +2,7 @@
 
 import React, {useEffect} from 'react';
 import {createId} from 'lib/createId';
-import {useUpdate} from 'hooks/useUpdate';
+import {useUpdate} from './useUpdate';
 
 const useTags = () => {
   const [tags, setTags] = React.useState<{id: number; name: string}[]>([]);
