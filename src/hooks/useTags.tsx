@@ -43,6 +43,9 @@ const useTags = () => {
     if (tagName !== null && tagName !== '') {
       setTags([...tags, {id: createId(), name: tagName}]);
     }
+    if (tagName === '') {
+      return alert('标签名不能为空');
+    }
   };
   return {tags, addTag, setTags, findTag, updateTag, findTagIndex, deleteTag};
 };
