@@ -24,8 +24,8 @@ const defaultFormData = {
 
 function Money() {
   // 被选中的对象
-  const [selected, setSelected] = useState({});
-  const {records, addRecord} = useRecords();
+  const [selected, setSelected] = useState(defaultFormData);
+  const {addRecord} = useRecords();
   const onChange = (obj: Partial<typeof selected>) => {
     setSelected({...selected, ...obj});
   };
