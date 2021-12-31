@@ -13,11 +13,29 @@ const Title = styled.div`
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
 `;
 
+const Item = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 20px;
+  padding: 12px 16px 12px 0;
+  > .note {
+    margin-right: auto;
+    margin-left: 16px;
+    color:#999;
+  font-weight: 200;
+
+  }
+`;
+
 function Statistics() {
   const [types, setTypes] = useState<'-' | '+'>('-');
   const {records} = useRecords();
   const {getName} = useTags();
-  
+
   return (
     <Layout>
       <Title>统计</Title>
@@ -27,14 +45,19 @@ function Statistics() {
       <div>
         {records.map((r) => {
           return (
-            <div>
-              {r.tagsIds.map((tagId) => (<span>{getName(tagId)}</span>))}
-              <hr />
-              {r.amount}
-              <hr />
-              {day(r.createAt).format('YYYY年MM月DD日')}
-            </div>
-              
+            <Item>
+              <div className='tags'>
+                {r.tagsIds.map((tagId) => (
+                  <span>{getName(tagId)}</span>
+                ))}
+              </div>
+
+              {r.note && <div className='note'>{r.note}</div>}
+
+              <div className='amount'>￥{r.amount}</div>
+
+              {/* {day(r.createAt).format('YYYY年MM月DD日')} */}
+            </Item>
           );
         })}
       </div>
