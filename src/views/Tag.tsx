@@ -17,8 +17,8 @@ const Topbar = styled.header`
   font-size: 20px;
   .icon {
     fill: #333;
-    width: 1.2em;
-    height: 1.2em;
+    width: 1em;
+    height: 1em;
   }
 `;
 
