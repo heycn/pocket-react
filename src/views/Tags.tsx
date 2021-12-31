@@ -11,6 +11,7 @@ const Title = styled.div`
   text-align: center;
   padding: 14px 0;
   font-size: 20px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
 `;
 const TagList = styled.ol`
   background: #f8f8f8;

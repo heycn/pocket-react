@@ -28,8 +28,6 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     background: #fff;
-    margin-top: 16px;
-
     span {
       margin-right: 12px;
       white-space: nowrap;
@@ -86,7 +84,6 @@ const Tag: React.FC = () => {
         </label>
         <div className='tips'>点击修改标签名</div>
       </Wrapper>
-      <Space />
       <Space />
       <Space />
       <Center>
