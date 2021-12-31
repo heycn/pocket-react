@@ -1,6 +1,6 @@
 // 封装一个自定义 Hook
 
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect} from 'react';
 import {createId} from 'lib/createId';
 import {useUpdate} from 'hooks/useUpdate';
 
