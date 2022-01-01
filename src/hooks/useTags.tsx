@@ -1,11 +1,11 @@
 // 封装一个自定义 Hook
 
-import React, {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {createId} from 'lib/createId';
 import {useUpdate} from './useUpdate';
 
 const useTags = () => {
-  const [tags, setTags] = React.useState<{id: number; name: string}[]>([]);
+  const [tags, setTags] = useState<{id: number; name: string}[]>([]);
 
   useEffect(() => {
     let localTags = JSON.parse(window.localStorage.getItem('tags') || '[]');
