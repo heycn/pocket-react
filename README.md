@@ -9,4 +9,10 @@
 
 ## 一键部署
 
-`yarn deploy`
+### 部署到 github
+
+`yarn deploy:github`
+
+### 部署到 码云
+
+`yarn deploy:gitee`
