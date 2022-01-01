@@ -12,7 +12,7 @@
 
 ## 一键部署
 
-`sh scripts/deploy.sh`
+`yarn deploy`
 
 ## `yarn eject`
 
