@@ -10,7 +10,11 @@ const Title = styled.div`
   text-align: center;
   padding: 14px 0;
   font-size: 20px;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+  /* border-bottom: 0.5px solid rgba(0, 0, 0, 0.15); */
+`;
+
+const ItemWrapper = styled.div`
+  background: #f8f8f8;
 `;
 
 const Item = styled.div`
@@ -25,9 +29,8 @@ const Item = styled.div`
   > .note {
     margin-right: auto;
     margin-left: 16px;
-    color:#999;
-  font-weight: 200;
-
+    color: #999;
+    font-weight: 200;
   }
 `;
 
@@ -45,19 +48,21 @@ function Statistics() {
       <div>
         {records.map((r) => {
           return (
-            <Item>
-              <div className='tags'>
-                {r.tagsIds.map((tagId) => (
-                  <span>{getName(tagId)}</span>
-                ))}
-              </div>
+            <ItemWrapper>
+              <Item>
+                <div className='tags'>
+                  {r.tagsIds.map((tagId) => (
+                    <span>{getName(tagId)}</span>
+                  ))}
+                </div>
 
-              {r.note && <div className='note'>{r.note}</div>}
+                {r.note && <div className='note'>{r.note}</div>}
 
-              <div className='amount'>￥{r.amount}</div>
+                <div className='amount'>￥{r.amount}</div>
 
-              {/* {day(r.createAt).format('YYYY年MM月DD日')} */}
-            </Item>
+                {/* {day(r.createAt).format('YYYY年MM月DD日')} */}
+              </Item>
+            </ItemWrapper>
           );
         })}
       </div>
