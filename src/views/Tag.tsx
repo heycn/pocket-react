@@ -57,9 +57,9 @@ const Wrapper = styled.section`
 
 const Deleted = styled.div`
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   color: #666;
-  font-weight: 300;
+  font-weight: 200;
 `;
 
 type Params = {
@@ -110,7 +110,10 @@ const Tag: React.FC = () => {
         <Deleted>
           <Space />
           <Space />
+          <Space />
           标签已被删除
+          <Space />
+          <div>请返回</div>
         </Deleted>
       )}
     </Layout>
