@@ -77,7 +77,7 @@ const Tag: React.FC = () => {
           <input
             type='text'
             value={tag.name}
-            onChange={(e) => {
+            onChange={e => {
               updateTag(tag.id, {name: e.target.value});
             }}
           />

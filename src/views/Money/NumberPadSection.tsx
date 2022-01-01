@@ -10,7 +10,7 @@ type Props = {
   onSave?: () => void;
 };
 
-const NumberPadSection: React.FC<Props> = (props) => {
+const NumberPadSection: React.FC<Props> = props => {
   // const output = props.value.toString();
   const [output, _setOutput] = useState(props.value.toString());
   const setOutput = (output: string) => {

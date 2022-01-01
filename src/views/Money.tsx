@@ -38,10 +38,10 @@ function Money() {
 
   return (
     <MyLayout>
-      <TypesSection value={selected.type} onChange={(type) => onChange({type})} />
-      <TagsSection value={selected.tagsIds} onChange={(tagsIds) => onChange({tagsIds})} />
-      <NoteSection value={selected.note} onChange={(note) => onChange({note})} />
-      <NumberPadSection value={selected.amount} onChange={(amount) => onChange({amount})} onSave={submit} />
+      <TypesSection value={selected.type} onChange={type => onChange({type})} />
+      <TagsSection value={selected.tagsIds} onChange={tagsIds => onChange({tagsIds})} />
+      <NoteSection value={selected.note} onChange={note => onChange({note})} />
+      <NumberPadSection value={selected.amount} onChange={amount => onChange({amount})} onSave={submit} />
     </MyLayout>
   );
 }

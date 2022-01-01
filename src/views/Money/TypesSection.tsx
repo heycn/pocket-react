@@ -39,14 +39,14 @@ type Props = {
   onChange: (value: '-' | '+') => void;
 };
 
-const TypesSection: React.FC<Props> = (props) => {
+const TypesSection: React.FC<Props> = props => {
   const typeMap = {'-': '支出', '+': '收入'};
   const [typeList] = React.useState<('-' | '+')[]>(['-', '+']);
   const type = props.value;
   return (
     <Wrapper>
       <ul>
-        {typeList.map((c) => (
+        {typeList.map(c => (
           <li
             key={c}
             className={type === c ? 'selected' : ''}

@@ -52,7 +52,7 @@ type Props = {
   onChange: (selected: number[]) => void;
 };
 
-const TagsSection: React.FC<Props> = (props) => {
+const TagsSection: React.FC<Props> = props => {
   const {tags, addTag} = useTags();
   const selectedTagIds = props.value;
 
@@ -60,7 +60,7 @@ const TagsSection: React.FC<Props> = (props) => {
     const index = selectedTagIds.indexOf(tagId);
     if (index >= 0) {
       // 如果 tag 已经被选中，就复制所有没有被选中的 tag，作为新的 selectedTags
-      props.onChange(selectedTagIds.filter((t) => t !== tagId));
+      props.onChange(selectedTagIds.filter(t => t !== tagId));
     } else {
       props.onChange([...selectedTagIds, tagId]);
     }
@@ -71,7 +71,7 @@ const TagsSection: React.FC<Props> = (props) => {
     <Wrapper>
       <button onClick={addTag}>新增标签</button>
       <ol>
-        {tags.map((tag) => (
+        {tags.map(tag => (
           <li
             key={tag.id}
             onClick={() => {

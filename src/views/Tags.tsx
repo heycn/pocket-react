@@ -42,7 +42,7 @@ function Tags() {
     <Layout>
       <Title>标签</Title>
       <TagList>
-        {tags.map((tag) => (
+        {tags.map(tag => (
           <li key={tag.id}>
             <Link to={'/tags/' + tag.id}>
               {' '}
