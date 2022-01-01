@@ -6,13 +6,6 @@ import {useRecords, RecordItem} from '../hooks/useRecords';
 import {useTags} from 'hooks/useTags';
 import day from 'dayjs';
 
-const Title = styled.div`
-  text-align: center;
-  padding: 14px 0;
-  font-size: 20px;
-  /* border-bottom: 0.5px solid rgba(0, 0, 0, 0.15); */
-`;
-
 const ItemWrapper = styled.div`
   background: #f8f8f8;
 `;
@@ -35,22 +28,23 @@ const Item = styled.div`
 `;
 
 const Header = styled.div`
-  font-size: 18px;
-  line-height: 20px;
-  padding: 10px 16px;
-  color: #999;
-  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 8px 16px;
+  color: #666;
+  font-weight: 200;
 `;
 
 function Statistics() {
-  const [type, setTypes] = useState<'-' | '+'>('-');
+  const [type, setType] = useState<'-' | '+'>('-');
   const {records} = useRecords();
   const {getName} = useTags();
   const hash: {[K: string]: RecordItem[]} = {};
   const selectedRecords = records.filter(r => r.type === type);
 
+  // eslint-disable-next-line array-callback-return
   selectedRecords.map(r => {
-    const key = day(r.createAt).format('YYY年MM月DD日');
+    const key = day(r.createdAt).format('YYYY-MM-DD');
     if (!(key in hash)) {
       hash[key] = [];
     }
@@ -66,10 +60,7 @@ function Statistics() {
 
   return (
     <Layout>
-      <Title>统计</Title>
-
-      <TypesSection value={type} onChange={value => setTypes(value)} />
-
+      <TypesSection value={type} onChange={value => setType(value)} />
       {array.map(([date, records]) => (
         <div>
           <Header>{date}</Header>
@@ -81,13 +72,13 @@ function Statistics() {
                     <div className='tags oneLine'>
                       {r.tagsIds
                         .map(tagId => <span key={tagId}>{getName(tagId)}</span>)
-                        .reduce((result, span. index, array) => 
-                        result.concat(index<array.length-1 ? [span, '、']): [span],[] as ReactNode[])
-                      }
+                        .reduce(
+                          (result, span, index, array) =>
+                            result.concat(index < array.length - 1 ? [span, '，'] : [span]),
+                          [] as ReactNode[]
+                        )}
                     </div>
-
                     {r.note && <div className='note'>{r.note}</div>}
-
                     <div className='amount'>￥{r.amount}</div>
                   </Item>
                 </ItemWrapper>
