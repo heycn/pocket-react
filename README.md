@@ -6,9 +6,6 @@
 
 `yarn start`
 
-## 测试
-
-`yarn test`
 
 ## 一键部署
 
