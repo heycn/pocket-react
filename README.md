@@ -10,9 +10,9 @@
 
 `yarn test`
 
-## 部署
+## 一键部署
 
-`yarn build`
+`sh scripts/deploy.sh`
 
 ## `yarn eject`
 
