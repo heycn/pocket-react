@@ -1,6 +1,7 @@
 {
   "name": "pocket-react",
   "version": "0.1.0",
+  "homepage": "https://github.com/heycn/pocket-react-website",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",
