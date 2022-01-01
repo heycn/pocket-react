@@ -35,23 +35,24 @@ const Item = styled.div`
 `;
 
 function Statistics() {
-  const [types, setTypes] = useState<'-' | '+'>('-');
+  const [type, setTypes] = useState<'-' | '+'>('-');
   const {records} = useRecords();
   const {getName} = useTags();
+  const selectedRecords = records.filter(r => r.type === type);
 
   return (
     <Layout>
       <Title>统计</Title>
 
-      <TypesSection value={types} onChange={(value) => setTypes(value)} />
+      <TypesSection value={type} onChange={value => setTypes(value)} />
 
       <div>
-        {records.map((r) => {
+        {selectedRecords.map(r => {
           return (
             <ItemWrapper>
               <Item>
                 <div className='tags'>
-                  {r.tagsIds.map((tagId) => (
+                  {r.tagsIds.map(tagId => (
                     <span>{getName(tagId)}</span>
                   ))}
                 </div>
