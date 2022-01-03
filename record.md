@@ -77,3 +77,23 @@ Router 有两种模式：History 和 Hash
 
 ## 将 Styled Component 改造为 Function Component
 
+## ECharts
+
+### 引入
+
+#### 无 webpack / parcel
+
+- 在 html 引入 script src = path/to/echarts.min.js
+- 然后使用全部变量 window.echarts
+
+#### 有 webpack / parcel
+
+- `yarn add echarts`
+- `yarn add - -dev @types/echarts`
+- `import echarts from 'echarts'`
+- 然后使用 echarts  即可
+
+#### 换主题
+
+` echarts.init(xxx, 'default');`
+
