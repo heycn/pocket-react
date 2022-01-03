@@ -2,6 +2,7 @@ import {HashRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import Tags from 'views/Tags';
 import Money from 'views/Money';
 import Statistics from 'views/Statistics';
+import Start from 'views/Start'
 import NoMatch from 'views/NoMatch';
 import {Tag} from './views/Tag';
 import styled from 'styled-components';
@@ -18,6 +19,9 @@ function App() {
       <Router>
         <Switch>
           {/* exact 精准匹配 */}
+          <Route exact path='/start'>
+            <Start />
+          </Route>
           <Route exact path='/tags'>
             <Tags />
           </Route>
@@ -30,7 +34,7 @@ function App() {
           <Route exact path='/statistics'>
             <Statistics />
           </Route>
-          <Redirect exact from='/' to='/money' />
+          <Redirect exact from='/' to='/start' />
           <Route path='*'>
             <NoMatch />
           </Route>
