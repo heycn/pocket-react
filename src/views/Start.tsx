@@ -9,17 +9,13 @@ const Wrapper = styled.div`
   background: #06f;
   display: flex;
   justify-content: center;
-  border: 5px solid red;
   .title {
     color: #ededed;
     font-size: 40px;
     font-weight: 200;
     padding-bottom: 56px;
-    border: 1px solid red;
   }
   .qrCode {
-    border: 1px solid red;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,10 +31,7 @@ const Wrapper = styled.div`
     }
   }
   .middle {
-    border: 1px solid red;
-
     padding-top: 40px;
-
     display: flex;
     align-items: center;
     color: #ededed;
@@ -52,8 +45,6 @@ const Wrapper = styled.div`
     }
   }
   .tips {
-    border: 1px solid red;
-
     margin-top: 64px;
     color: #ededed;
     font-weight: 200;
