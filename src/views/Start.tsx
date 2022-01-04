@@ -69,10 +69,9 @@ const Wrapper = styled.div`
 `;
 
 // 开发完一定要改回来！！！
-// 开发完一定要改回来！！！
-// 开发完一定要改回来！！！
+// https://heycn.github.io/pocket-react-website/#/money
 const onClick = () => {
-  return (window.location.href = 'http://10.227.199.165:3000/pocket-react-website#/money');
+  return (window.location.href = 'https://heycn.github.io/pocket-react-website/#/money');
 };
 
 function Start() {
