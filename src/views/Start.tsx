@@ -44,16 +44,35 @@ const Wrapper = styled.div`
       height: 1.1em;
     }
   }
+  @keyframes scaleDraw {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.25);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.25);
+    }
+  }
+
   .tips {
     margin-top: 64px;
     color: #ededed;
     font-weight: 200;
     font-size: 16px;
+    -webkit-animation: scaleDraw 5s infinite ease-in-out;
   }
 `;
 
+// 开发完一定要改回来！！！
+// 开发完一定要改回来！！！
+// 开发完一定要改回来！！！
 const onClick = () => {
-  return (window.location.href = 'https://heycn.github.io/pocket-react-website/#/money');
+  return (window.location.href = 'http://10.227.199.165:3000/pocket-react-website#/money');
 };
 
 function Start() {
