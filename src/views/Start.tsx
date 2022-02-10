@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import styled from 'styled-components';
 import Icon from 'components/Icon';
-import img from 'images/qrcode.png';
+// import img from 'images/qrcode.png';
 import {Center} from 'components/Center';
 
 const Wrapper = styled.div`
@@ -80,10 +80,10 @@ function Start() {
     <Wrapper onClick={onClick}>
       <Center>
         <div className='title'>简约 快速 好用</div>
-        <div className='qrCode'>
+        {/* <div className='qrCode'>
           <img src={img} />
           <span>手机微信扫码浏览效果更佳哟~</span>
-        </div>
+        </div> */}
         <div className='middle'>
           <Icon name='logo' /> 口袋记账
         </div>
