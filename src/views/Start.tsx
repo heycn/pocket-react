@@ -70,8 +70,9 @@ const Wrapper = styled.div`
 
 // 开发完一定要改回来！！！
 // https://heycn.github.io/pocket-react-website/#/money
+// https://heycn.gitee.io/pocket-react-website/#/money
 const onClick = () => {
-  return (window.location.href = 'https://heycn.github.io/pocket-react-website/#/money');
+  return (window.location.href = 'https://heycn.gitee.io/pocket-react-website/#/money');
 };
 
 function Start() {
